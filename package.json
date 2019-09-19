@@ -1,0 +1,50 @@
+{
+  "name": "presence",
+  "displayName": "Presence",
+  "description": "Discord presence that tracks info based on git stats",
+  "version": "0.0.1",
+  "publisher": "volskaya",
+  "author": {
+    "name": "Volskaya"
+  },
+  "bugs": {
+    "url": "https://github.com/volskaya/presence-vscode/issues",
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/volskaya/presence-vscode.git"
+  },
+  "homepage": "https://github.com/volskaya/presence-vscode/blob/master/README.md",
+  "engines": {
+    "vscode": "^1.25.0"
+  },
+  "categories": ["Other"],
+  "activationEvents": ["*"],
+  "contributes": {
+    "start": [
+      {
+        "command": "extension.start",
+        "title": "Start Presence server",
+        "category": "Presence"
+      }
+    ]
+  },
+  "main": "./out/extension",
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "postinstall": "node ./node_modules/vscode/bin/install",
+    "test": "npm run compile && node ./node_modules/vscode/bin/test"
+  },
+  "devDependencies": {
+    "@types/mocha": "^2.2.42",
+    "@types/node": "^7.0.70",
+    "tslint": "^5.8.0",
+    "typescript": "^2.6.1",
+    "vscode": "^1.1.21"
+  },
+  "dependencies": {
+    "axios": "^0.18.0"
+  }
+}
